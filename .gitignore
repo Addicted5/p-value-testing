@@ -1,2 +1,7 @@
 .env/
-_pycache_
+_pycache_/
+build/
+package-lock.json
+*.lock
+.vscode/
+.idea/

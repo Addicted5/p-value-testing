@@ -27,15 +27,18 @@
                     <input name='X' class="form-control"><br>
                     <label>Enter alpha(0-1):                              </label>
                     <input name='alpha' class="form-control"><br>
-                    <input type='submit'>
+                    <input type='submit' class="btn btn-secondary" value="Calculate">
                 </form>
             </div>
             <div class='col-sm-4'>
-                Z-value = {{ z_value }}<br><br>
-                <p>For 1 tailed test: </p>
-                {{text_one}}
-                <br><br><p>For 2 tailed test: </p>
-                {{text_two}}<br><br>
+                <h3>Output:</h3>
+                <div class="card bg-secondary text-white">
+                    <div class="card-body">
+                        <p>Z-value = {{ z_value }}<br></p>
+                        <p>For 1 tailed test: <br> {{text_one}}</p>
+                        <br><br><p>For 2 tailed test: <br> {{text_two}}</p>
+                    </div>
+                  </div>
             </div>
         </div>
     </div>

@@ -13,7 +13,7 @@ def hello_world():
         u = float(request.form['u'].strip())
         X = float(request.form['X'].strip())
         alpha = float(request.form['alpha'].strip())
-        if S > 0 and n >0 and alpha > 0 and alpha < 1:
+        if S > 0 and n >0:
             Z, p = ztest(X,u,S,n)
             ptwo = p*2
             if p>alpha:
@@ -33,11 +33,7 @@ def hello_world():
         else:
             output = "<h3>Output:</h3> \
             <div class='card bg-secondary text-white'> \
-            <div class='card-body'>"
-            if alpha < 0 or alpha >=1:
-                output = output + 'Alpha value must be between 0-1'
-            else:
-                output = output + 'Enter Valid Input'
+            <div class='card-body'>Enter Valid Input"
             return render_template('output.html', op=output)
 
 def ztest(X,u,S,n):

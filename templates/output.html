@@ -18,22 +18,19 @@
             <div class='col-sm-4'>
                 <form method="POST">
                     <label>Enter Standard Deviation of Population/Sample: </label>
-                    <input name='S' class="form-control"><br>
+                    <input name='S' class="form-control" type="number"><br>
                     <label>Enter Sample Size:                             </label>
-                    <input name='n' class="form-control"><br>
+                    <input name='n' class="form-control" type="number"><br>
                     <label>Enter Population mean(not in Percentage):      </label>
-                    <input name='u' class="form-control"><br>
+                    <input name='u' class="form-control" type="number"><br>
                     <label>Enter Sample mean(not in Percentage):          </label>
-                    <input name='X' class="form-control"><br>
+                    <input name='X' class="form-control" type="number"><br>
                     <label>Enter alpha(0-1):                              </label>
-                    <input name='alpha' class="form-control"><br>
+                    <input name='alpha' class="form-control" type="number"><br>
                     <input type='submit' class="btn btn-secondary" value="Calculate">
                 </form>
             </div>
             <div class='col-sm-4'>
-                <h3>Output:</h3>
-                <div class="card bg-secondary text-white">
-                    <div class="card-body">
                         {% autoescape false %}
                         {{ op }}
                         {% endautoescape %}

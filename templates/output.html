@@ -34,9 +34,9 @@
                 <h3>Output:</h3>
                 <div class="card bg-secondary text-white">
                     <div class="card-body">
-                        <p>Z-value = {{ z_value }}<br></p>
-                        <p>For 1 tailed test: <br> {{text_one}}</p>
-                        <br><br><p>For 2 tailed test: <br> {{text_two}}</p>
+                        {% autoescape false %}
+                        {{ op }}
+                        {% endautoescape %}
                     </div>
                   </div>
             </div>

@@ -13,18 +13,22 @@ def hello_world():
         u = float(request.form['u'].strip())
         X = float(request.form['X'].strip())
         alpha = float(request.form['alpha'].strip())
-        Z, p = ztest(X,u,S,n)
-        ptwo = p*2
-        if p>alpha:
-            two_tail = 'Fail to Reject null Hypothesis'
-            one_tail = 'Fail to Reject null Hypothesis'
-        else:
-            if ptwo>alpha:
+        if S > 0 and n >0 and alpha > 0:
+            Z, p = ztest(X,u,S,n)
+            ptwo = p*2
+            if p>alpha:
                 two_tail = 'Fail to Reject null Hypothesis'
+                one_tail = 'Fail to Reject null Hypothesis'
             else:
-                two_tail = 'Null Hypothesis can be rejected'
-            one_tail = 'Null Hypothesis can be rejected'
-        return render_template('output.html', z_value=Z,text_one=one_tail,text_two=two_tail)
+                if ptwo>alpha:
+                    two_tail = 'Fail to Reject null Hypothesis'
+                else:
+                    two_tail = 'Null Hypothesis can be rejected'
+                one_tail = 'Null Hypothesis can be rejected'
+            output = "<p>Z-value = " + str(Z) + "<br></p><p>For 1 tailed test: <br>" + one_tail + "</p> <br><br><p>For 2 tailed test: <br> " + two_tail + "</p>"
+            return render_template('output.html', op=output)
+        else:
+            return render_template('output.html', op='Enter Valid Input')
 
 def ztest(X,u,S,n):
     Z = (X-u)/(S/(n**0.5))

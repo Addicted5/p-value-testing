@@ -13,7 +13,7 @@ def hello_world():
         u = float(request.form['u'].strip())
         X = float(request.form['X'].strip())
         alpha = float(request.form['alpha'].strip())
-        if S > 0 and n >0 and alpha > 0:
+        if S > 0 and n >0 and alpha > 0 and alpha < 1:
             Z, p = ztest(X,u,S,n)
             ptwo = p*2
             if p>alpha:
@@ -28,7 +28,11 @@ def hello_world():
             output = "<p>Z-value = " + str(Z) + "<br></p><p>For 1 tailed test: <br>" + one_tail + "</p> <br><br><p>For 2 tailed test: <br> " + two_tail + "</p>"
             return render_template('output.html', op=output)
         else:
-            return render_template('output.html', op='Enter Valid Input')
+            if alpha < 0 or alpha >=1:
+                output = 'Alpha value must be between 0-1'
+            else:
+                output = 'Enter Valid Input'
+            return render_template('output.html', op=output)
 
 def ztest(X,u,S,n):
     Z = (X-u)/(S/(n**0.5))

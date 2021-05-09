@@ -18,15 +18,15 @@
             <div class='col-sm-4'>
                 <form method="POST">
                     <label>Enter Standard Deviation of Population/Sample: </label>
-                    <input name='S' class="form-control" type="number" step='any' min=0><br>
+                    <input name='S' class="form-control" type="number" step='any' min=0 required><br>
                     <label>Enter Sample Size:                             </label>
-                    <input name='n' class="form-control" type="number" step=1 min=0><br>
+                    <input name='n' class="form-control" type="number" step=1 min=0 required><br>
                     <label>Enter Population mean(not in Percentage):      </label>
-                    <input name='u' class="form-control" type="number" step='any'><br>
+                    <input name='u' class="form-control" type="number" step='any' required><br>
                     <label>Enter Sample mean(not in Percentage):          </label>
-                    <input name='X' class="form-control" type="number" step='any'><br>
+                    <input name='X' class="form-control" type="number" step='any' required><br>
                     <label>Enter alpha(0-1):                              </label>
-                    <input name='alpha' class="form-control" type="number" step='any' min=0 max=1 value=0.05><br>
+                    <input name='alpha' class="form-control" type="number" step='any' min=0 max=1 value=0.05 required><br>
                     <input type='submit' class="btn btn-secondary" value="Calculate">
                 </form>
             </div>

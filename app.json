@@ -1,0 +1,10 @@
+{
+  "name": "P-Test Demo",
+  "description": "Z Test using P-Value, a sample demo app using Flask",
+  "keywords": [
+    "flask",
+    "statistics",
+    "flask-app"
+  ],
+  "repository": "https://github.com/prustyashutosh/p-value-testing",
+}

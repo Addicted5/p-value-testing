@@ -3,7 +3,9 @@ import scipy.stats as st
 app = Flask(__name__)
 
 @app.route('/', methods=['GET','POST'])
-def hello_world():
+@app.route('/home', methods=['GET','POST'])
+@app.route('/index', methods=['GET','POST'])
+def home():
     request_type = request.method
     if request_type == 'GET':
         return render_template('output.html', op='')
@@ -44,5 +46,6 @@ def ztest(X,u,S,n):
         p = 1-st.norm.cdf(Z)
     p2 = p*2
     return Z, p
+    
 if __name__ == "__main__":
     app.run(port = 5001 , debug= False)
